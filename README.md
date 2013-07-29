@@ -1,6 +1,6 @@
-Pure JS Sticky Scroll
+Sticky Scroll
 ========================
 
 Demo: http://pebbleroad.github.io/javascript-sticky-scroll/
 
-* No Library Dependance
+* No dependance on jQuery
