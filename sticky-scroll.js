@@ -92,11 +92,11 @@
       
       this.ele.style.width = this.eleWidth + 'px';
       
-      window.addEventListener("scroll", function(){        
+      addEvent(window, "scroll", function(){        
         
         self.scrollHandler()
 
-      }, false);
+      });
       
       
   };
@@ -149,10 +149,22 @@
           }
           
   }
-
+  
   function getCamelCasedCssProperty(cssProperty){
           return cssProperty.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase() });
   }  
+
+  /**
+   * Add Event for IE8 and below
+   */
+
+  function addEvent(element, evnt, funct){
+    if (!window.addEventListener)
+     return element.attachEvent('on'+evnt, funct);
+    else
+     return element.addEventListener(evnt, funct, false);
+  }
+
 
 
 })(window, document, undefined);
