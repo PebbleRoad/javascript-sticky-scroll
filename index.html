@@ -3,22 +3,54 @@
   <head>
     
     <script type="text/javascript" src="sticky-scroll.js"></script>
+    <script>
+        window.onload = function(){
+            var sticky = new StickyScroll(
+                {
+                    element: '.stickyScroll',
+                    bounds: '.page',
+                    gutter: 20,
+                    stickyklass: 'block--sticky'
+                }
+            );
+            
+            sticky.init();
+        };
+    </script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css">
     <style>
+
+    body{
+        width: 80%;
+        margin: 0 auto;
+    }
     
-    .block--body{
+    .page{
         overflow: hidden;
+        //padding: 20px;
     }
     .block--sticky{
-        position: fixed;        
+        position: fixed;           
+        top: 0;
     }
-    .columns{
-        min-height: 1px;
+    .content{        
         float: left;
+        width: 500px;
+    }
+
+
+    .stickScroll-wrapper{
+        float: left;
+        width: 300px;        
+    }
+
+    .stickyScroll{
+        background: #ffc;
+        padding: 1px;
     }
 
     p, h2{
-        margin-top: 0;
+        margin: 0 0 20px 0;
     }
 
 
@@ -26,16 +58,19 @@
   </head>
   <body>
 
-    <div class="block--body">
+    <div class="page">
+        
+        <div class="stickScroll-wrapper">            
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, laudantium, nam, ex hic sint debitis minus tempora consequatur voluptate dicta voluptas earum illo quisquam atque nesciunt explicabo sed ullam odit.</p>
 
-        <div class="columns" style="width:200px;">
-            <div class="block--sticyScroll">
+            <div class="stickyScroll">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, architecto, a! Incidunt, vitae, nostrum quibusdam deserunt illo ullam velit similique assumenda reiciendis sint soluta quaerat dolore nemo eum cumque unde!</p>
             </div>
+            
         </div>
 
-
-        <div class="columns" style="width:500px;">
+        <div class="content">
         
             <h2>Introduction with space</h2>
 
@@ -54,8 +89,18 @@
             <p>The challenge is to get complete, accurate and consistent metadata applied to information and data resources.</p>
 
             <p>Metadata can be collected in many ways—from the information environment, work activities and from people. The problem arises when metadata that could be effectively collected from the environment is delegated to be collected from people. People who are in the middle of work tasks do not see direct benefits from completing numerous metadata fields. When coerced into doing unnatural things, they usually revolt or find workarounds thereby undermining the entire initiative.</p>
+            
 
-            <h2>Principles</h2>
+        </div>
+
+    </div>
+
+
+    <hr>
+
+    <div class="row">
+    <div class="columns eight">
+        <h2>Outside the Bound</h2>
 
             <p>In the course of our work with large enterprises we have found the following principles can be used to set the baseline for the conversation on collection strategies.</p>
 
@@ -110,9 +155,7 @@
             <h2>Conclusion</h2>
 
             <p>Having complete, accurate and consistent metadata is essential to any information system. Collection of metadata therefore becomes crucial and having the right set of strategies in place can make all the difference between an effective system and one that is a glorified file store. People can be ingenious at avoiding onerous metadata assignment tasks, especially if they are repetitive and not apparently related to the task at hand. People also see different aspects to a document that to them are relevant but may not be to others, and this leads to problems of consistency. Smart design of systems and the way metadata is collected, using the principles and strategies above, can mitigate the burden on people, and improve consistency and quality of metadata.</p>
-
-        </div>
-
+    </div>
     </div>
   </body>
 </html>
